@@ -7,6 +7,7 @@ using namespace std;
 // Data types
 td long long ll;
 td unsigned long long int ull;
+td long double ld;
 
 // Containers
 td vector<int> vi;
@@ -25,7 +26,7 @@ td pair<ll, ll> pll;
 
 // Important Constants
 #define inf (int)1e9
-#define eps 1e-9
+#define eps (ld)1e-12
 #define mod (ll)(1e9 + 7)
 #define endl '\n'
 
@@ -37,6 +38,9 @@ td pair<ll, ll> pll;
 #define dec(i,a,b) for(int i=b;i>=a;i--) //decreasing for loop from b to a
 #define in(a,b)( (b).find(a) != (b).end()) // check if a is inside b
 #define cases ll t;cin>>t;while(t--) // declare testcases, take input and start while loop
+
+#define abs(x) (x<0 ? -x : x)
+#define sqr(x) (x*x)
 
 // I/O declare n and take input
 #define cint(n) int n;cin>>n

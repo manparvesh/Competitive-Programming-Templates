@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 public class Main {
     private static BufferedReader bufferedReader;
     private static PrintWriter out;
+    private static final String SPACE = " ";
 
     /**
      * Initializes private variables
@@ -30,22 +31,32 @@ public class Main {
         out.close();
     }
 
-    /**
-     * Parses int from String
-     *
-     * @param s
-     * @return
-     */
-    private static int parseInt(String s) {
-        return Integer.parseInt(s);
-    }
-
     private static void println(String s) {
         out.println(s);
     }
 
     private static void println(int i) {
         out.println(i);
+    }
+
+    private static void println() {
+        out.println();
+    }
+
+    private static void println(double d) {
+        out.println(d);
+    }
+
+    private static void print(String s) {
+        out.print(s);
+    }
+
+    private static void print(int i) {
+        out.print(i);
+    }
+
+    private static void print(double d) {
+        out.print(d);
     }
 
     /**
@@ -58,14 +69,20 @@ public class Main {
         return bufferedReader.readLine();
     }
 
-    /**
-     * Takes single int input in a line
-     *
-     * @return
-     * @throws Exception
-     */
-    private static int singleIntInput() throws IOException {
-        return parseInt(readLine());
+    private static int singleIntegerInput() throws IOException {
+        return Integer.parseInt(readLine());
+    }
+
+    private static double singleDoubleInput() throws IOException {
+        return Double.parseDouble(readLine());
+    }
+
+    private static long singleLongInput() throws IOException {
+        return Long.parseLong(readLine());
+    }
+
+    private static String singleStringInput() throws IOException {
+        return readLine().trim();
     }
 
     /**
@@ -85,19 +102,46 @@ public class Main {
      * @return
      * @throws Exception
      */
-    private static int[] intArrayInputFromLine(int n) throws IOException {
+    private static int[] arrayIntegerInput(int n) throws IOException {
         String sar[] = readLineAndSplitIntoArray();
         int ar[] = new int[n];
         for (int i = 0; i < n; i++) {
-            ar[i] = parseInt(sar[i]);
+            ar[i] = Integer.parseInt(sar[i]);
         }
         return ar;
+    }
+
+    private static long[] arrayLongInput(int n) throws IOException {
+        String sar[] = readLineAndSplitIntoArray();
+        long ar[] = new long[n];
+        for (int i = 0; i < n; i++) {
+            ar[i] = Long.parseLong(sar[i]);
+        }
+        return ar;
+    }
+
+    private static double[] arrayDoubleInput(int n) throws IOException {
+        String sar[] = readLineAndSplitIntoArray();
+        double ar[] = new double[n];
+        for (int i = 0; i < n; i++) {
+            ar[i] = Double.parseDouble(sar[i]);
+        }
+        return ar;
+    }
+
+    private static String[] arrayStringInput(int n) throws IOException {
+        return readLineAndSplitIntoArray();
+    }
+
+    private void run() throws IOException {
+        // main code
     }
 
     public static void main(String[] args) throws IOException {
         init();
 
-        // main code
+        Main main = new Main();
+        main.run();
 
         end();
     }
